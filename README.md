@@ -1,6 +1,8 @@
 Ansible Rclone
 =========
 
+[![Build Status](https://travis-ci.org/charliemaiors/rclone-ansible.svg?branch=master)](https://travis-ci.org/charliemaiors/rclone-ansible)
+
 This role will install [Rclone](https://rclone.org/) for:
 
 * Archlinux

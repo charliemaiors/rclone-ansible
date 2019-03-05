@@ -1,0 +1,6 @@
+---
+- name: Install rclone macOS
+  homebrew:
+    state: present
+    name: rclone
+    update_homebrew: true

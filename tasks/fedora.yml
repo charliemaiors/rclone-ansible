@@ -1,0 +1,6 @@
+---
+- name: Install Rclone for Fedora
+  dnf:
+      name: rclone
+      update_cache: true
+      state: present

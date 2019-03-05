@@ -1,0 +1,5 @@
+---
+- name: Install rclone FreeBSD
+  pkgng:
+    name: rclone
+    state: present

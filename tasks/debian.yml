@@ -1,0 +1,6 @@
+---
+- name: Install Rclone Debian/Ubuntu
+  apt:
+    update_cache: true
+    name: rclone
+    

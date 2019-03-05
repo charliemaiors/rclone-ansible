@@ -1,0 +1,6 @@
+---
+- name: Install Rclone for OpenSUSE
+  zypper:
+      name: rclone
+      state: present
+      update_cache: true

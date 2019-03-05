@@ -1,0 +1,5 @@
+---
+- name: Install Rclone Windows
+  win_chocolatey:
+    name: rclone
+    state: present

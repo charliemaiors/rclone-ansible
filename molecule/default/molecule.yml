@@ -9,23 +9,30 @@ platforms:
   - name: centos
     image: centos:7
     pre_build_image: true
+    pull: true
   - name: opensuse
     image: opensuse:leap
     pre_build_image: true
+    pull: true
   - name: ubuntu bionic
     image: ubuntu:bionic
     pre_build_image: true
+    pull: true
   - name: ubuntu xenial
     image: ubuntu:xenial
     pre_build_image: true
+    pull: true
   - name: fedora
     image: fedora:29
     pre_build_image: true
+    pull: true
   - name: archlinux
     image: archlinux/base
     pre_build_image: true
+    pull: true
 provisioner:
   name: ansible
+  log: true
   lint:
     name: ansible-lint
 scenario:

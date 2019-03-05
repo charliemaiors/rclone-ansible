@@ -4,7 +4,7 @@
   when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
 - name: Install rclone for Fedora
   include_tasks: fedora.yml
-  when: ansible_distribution == 'Fedora' 
+  when: ansible_distribution == 'Fedora'
 - name: Install rclone for Debian family
   include_tasks: debian.yml
   when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian'

@@ -14,11 +14,11 @@ platforms:
     image: opensuse:leap
     pre_build_image: true
     pull: true
-  - name: ubuntu bionic
+  - name: ubuntu-bionic
     image: ubuntu:bionic
     pre_build_image: true
     pull: true
-  - name: ubuntu xenial
+  - name: ubuntu-xenial
     image: ubuntu:xenial
     pre_build_image: true
     pull: true
@@ -27,7 +27,7 @@ platforms:
     pre_build_image: true
     pull: true
   - name: archlinux
-    image: archlinux/base
+    image: archlinux/base:latest
     pre_build_image: true
     pull: true
 provisioner:

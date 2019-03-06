@@ -11,23 +11,23 @@ platforms:
     pre_build_image: true
     pull: true
   - name: opensuse
-    image: opensuse:leap
+    image: cmaiorano/opensuse-ansible
     pre_build_image: true
     pull: true
   - name: ubuntu-bionic
-    image: ubuntu:bionic
+    image: geerlingguy/docker-ubuntu1804-ansible
     pre_build_image: true
     pull: true
   - name: ubuntu-xenial
-    image: ubuntu:xenial
+    image: docker-ubuntu1604-ansible
     pre_build_image: true
     pull: true
   - name: fedora
-    image: fedora:29
+    image: docker-fedora29-ansible
     pre_build_image: true
     pull: true
   - name: archlinux
-    image: archlinux/base:latest
+    image: cmaiorano/archlinux-ansible:latest
     pre_build_image: true
     pull: true
 provisioner:

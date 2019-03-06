@@ -23,7 +23,7 @@ platforms:
     pre_build_image: true
     pull: true
   - name: fedora
-    image: docker-fedora29-ansible
+    image: geerlingguy/docker-fedora29-ansible
     pre_build_image: true
     pull: true
   - name: archlinux

@@ -17,7 +17,7 @@ This role will install [Rclone](https://rclone.org/) for:
 Requirements
 ------------
 
-There are no particular requirements, only the standards for FreeBSD and Windows connection
+There are no particular requirements, only the standards for FreeBSD and Windows connection setting.
 
 Role Variables
 --------------

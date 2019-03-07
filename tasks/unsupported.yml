@@ -17,13 +17,13 @@
 
 - name: Get rclone stable version
   unarchive:
-    src: https://downloads.rclone.org/v{{ rclone_version }}/rclone-v{{ rclone_version }}-linux-{{ rclone_arch }}.zip
+    src: https://downloads.rclone.org/v{{ rclone_version }}/rclone-v{{ rclone_version }}-linux-{{ rclone_architectures[ansible_architecture] }}.zip
     dest: "{{ rclone_setup_tmp_dir }}"
     remote_src: true
-    creates: "{{ rclone_setup_tmp_dir }}/rclone-v{{ rclone_version }}-linux-{{ rclone_arch }}"
+    creates: "{{ rclone_setup_tmp_dir }}/rclone-v{{ rclone_version }}-linux-{{ rclone_architectures[ansible_architecture] }}"
 - name: Copy rclone binary
   copy:
-    src: "{{ rclone_setup_tmp_dir}}/rclone-v{{ rclone_version }}-linux-{{ rclone_arch }}/rclone"
+    src: "{{ rclone_setup_tmp_dir}}/rclone-v{{ rclone_version }}-linux-{{ rclone_architectures[ansible_architecture] }}/rclone"
     dest: "/usr/bin/rclone"
     mode: 0755
     owner: root

@@ -13,9 +13,14 @@ addons:
 matrix:
   include:
     - os: linux
-      env: SCENARIO="default" PYTHON=3.6
+      env: SCENARIO="default"
+      python: 3.6
+    - os: linux
+      env: SCENARIO="default"
+      python: 2.7
     - os: osx
-      env: SCENARIO="macos" PYTHON=3.6
+      env: SCENARIO="macos"
+      python: 3.6
 
 install:
   - pip install molecule docker-py

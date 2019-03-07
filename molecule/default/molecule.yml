@@ -11,7 +11,7 @@ platforms:
     pre_build_image: true
     pull: true
   - name: centos6
-    image: geerlingguy/docker-centos6-ansible/
+    image: geerlingguy/docker-centos6-ansible
     pre_build_image: true
     pull: true
   - name: opensuse

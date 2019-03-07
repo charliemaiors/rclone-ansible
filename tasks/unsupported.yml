@@ -13,8 +13,14 @@
         rclone_latest_version
     - set_fact:
         rclone_version: "{{ rclone_latest_version.content | replace ('rclone v', '', 1) | trim }}"
-  when: rclone_version is undefined
-
+- name: Update repositories cache on Ubuntu Xenial
+  apt:
+    update_cache: true
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_version == '16.04'
+- name: Install required packages
+  package:
+    name: unzip
+    state: present
 - name: Get rclone stable version
   unarchive:
     src: https://downloads.rclone.org/v{{ rclone_version }}/rclone-v{{ rclone_version }}-linux-{{ rclone_architectures[ansible_architecture] }}.zip

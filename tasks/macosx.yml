@@ -6,4 +6,4 @@
     update_homebrew: true
 - name: Set Supported
   set_fact:
-      supported: true
+    supported: true

@@ -5,4 +5,4 @@
     name: rclone
 - name: Set Supported
   set_fact:
-      supported: true
+    supported: true

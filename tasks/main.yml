@@ -4,7 +4,7 @@
     supported: false
 - name: Install rclone for Red Hat family
   include_tasks: centos.yml
-  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+  when: (ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux') and ansible_distribution_major_version|int >= 7
 - name: Install rclone for Fedora
   include_tasks: fedora.yml
   when: ansible_distribution == 'Fedora'
@@ -16,7 +16,7 @@
   when: ansible_distribution == 'Archlinux'
 - name: Install rclone for OpenSUSE
   include_tasks: opensuse.yml
-  when: ansible_distribution == 'OpenSUSE'
+  when: ansible_distribution == 'OpenSuse'
 - name: Install rclone for macOS
   include_tasks: macosx.yml
   when: ansible_os_family == 'Darwin'

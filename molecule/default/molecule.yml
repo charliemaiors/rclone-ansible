@@ -6,8 +6,12 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: centos
+  - name: centos7
     image: centos:7
+    pre_build_image: true
+    pull: true
+  - name: centos6
+    image: centos:6
     pre_build_image: true
     pull: true
   - name: opensuse

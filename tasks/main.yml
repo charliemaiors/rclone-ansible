@@ -26,3 +26,6 @@
 - name: Install rclone for Windows
   include_tasks: windows.yml
   when: ansible_os_family == 'Windows'
+- name: Include unsupported when the platform is not supported
+  include_tasks: unsupported.yml
+  when: not supported

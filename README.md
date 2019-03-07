@@ -42,3 +42,8 @@ License
 -------
 
 BSD
+
+Notes
+-------
+
+The unsupported part was taken from [stefangweichinger.ansible-rclone](https://github.com/stefangweichinger/ansible-rclone)

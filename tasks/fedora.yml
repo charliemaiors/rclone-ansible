@@ -4,3 +4,4 @@
       name: rclone
       update_cache: true
       state: present
+  notify: Set Supported

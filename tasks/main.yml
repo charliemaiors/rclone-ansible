@@ -1,4 +1,7 @@
 ---
+- name: Setting supported to false
+  set_fact:
+    supported: false
 - name: Install rclone for Red Hat family
   include_tasks: centos.yml
   when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
@@ -7,7 +10,7 @@
   when: ansible_distribution == 'Fedora'
 - name: Install rclone for Debian family
   include_tasks: debian.yml
-  when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian'
+  when: (ansible_distribution == 'Ubuntu' and ansible_distribution_major_version|int >= 18) or ansible_distribution == 'Debian'
 - name: Install rclone for Archlinux
   include_tasks: archlinux.yml
   when: ansible_distribution == 'Archlinux'
@@ -23,3 +26,4 @@
 - name: Install rclone for Windows
   include_tasks: windows.yml
   when: ansible_os_family == 'Windows'
+

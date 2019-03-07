@@ -1,0 +1,31 @@
+---  # This part is COPIED from https://github.com/stefangweichinger/ansible-rclone
+- name: Create temporary working directory
+  file:
+    path: "{{ rclone_setup_tmp_dir }}"
+    state: directory
+    mode: 0775
+- block:
+    - name: Check latest stable rclone version number
+      uri:
+        url: https://downloads.rclone.org/version.txt
+        return_content: true
+      register:
+        rclone_latest_version
+    - set_fact:
+        rclone_version: "{{ rclone_latest_version.content | replace ('rclone v', '', 1) | trim }}"
+  when: rclone_version is undefined
+
+- name: Get rclone stable version
+  unarchive:
+    src: https://downloads.rclone.org/v{{ rclone_version }}/rclone-v{{ rclone_version }}-linux-{{ rclone_arch }}.zip
+    dest: "{{ rclone_setup_tmp_dir }}"
+    remote_src: true
+    creates: "{{ rclone_setup_tmp_dir }}/rclone-v{{ rclone_version }}-linux-{{ rclone_arch }}"
+- name: Copy rclone binary
+  copy:
+    src: "{{ rclone_setup_tmp_dir}}/rclone-v{{ rclone_version }}-linux-{{ rclone_arch }}/rclone"
+    dest: "/usr/bin/rclone"
+    mode: 0755
+    owner: root
+    group: root
+    remote_src: true

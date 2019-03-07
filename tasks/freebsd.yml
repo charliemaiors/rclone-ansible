@@ -3,3 +3,4 @@
   pkgng:
     name: rclone
     state: present
+  notify: Set Supported

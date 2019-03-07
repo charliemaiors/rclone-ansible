@@ -1,2 +1,4 @@
 ---
-# handlers file for rclone-ansible
+- name: Set Supported
+  set_fact:
+      supporter: true

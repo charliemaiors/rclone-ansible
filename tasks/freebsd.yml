@@ -3,4 +3,6 @@
   pkgng:
     name: rclone
     state: present
-  notify: Set Supported
+- name: Set Supported
+  set_fact:
+      supported: true

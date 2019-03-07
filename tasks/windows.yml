@@ -3,4 +3,6 @@
   win_chocolatey:
     name: rclone
     state: present
-  notifiy: Set Supported
+- name: Set Supported
+  set_fact:
+      supported: true

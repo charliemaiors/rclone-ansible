@@ -4,4 +4,6 @@
       name: rclone
       state: present
       update_cache: true
-  notify: Set Supported
+- name: Set Supported
+  set_fact:
+      supported: true

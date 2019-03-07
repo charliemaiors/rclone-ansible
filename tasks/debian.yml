@@ -3,4 +3,6 @@
   apt:
     update_cache: true
     name: rclone
-  notify: Set Supported
+- name: Set Supported
+  set_fact:
+      supported: true

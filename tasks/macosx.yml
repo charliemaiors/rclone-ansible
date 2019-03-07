@@ -4,4 +4,6 @@
     state: present
     name: rclone
     update_homebrew: true
-  notify: Set Supported
+- name: Set Supported
+  set_fact:
+      supported: true

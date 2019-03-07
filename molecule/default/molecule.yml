@@ -18,10 +18,6 @@ platforms:
     image: geerlingguy/docker-ubuntu1804-ansible
     pre_build_image: true
     pull: true
-  - name: ubuntu-xenial
-    image: geerlingguy/docker-ubuntu1604-ansible
-    pre_build_image: true
-    pull: true
   - name: fedora
     image: geerlingguy/docker-fedora29-ansible
     pre_build_image: true

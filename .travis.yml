@@ -10,11 +10,18 @@ addons:
     packages:
       - docker-ce
 
+matrix:
+  include:
+    - os: linux
+      env: SCENARIO="default"
+    - os: osx
+      env: SCENARIO="macos"
+
 install:
   - pip install molecule docker-py
 
 script:
-  - molecule test
+  - molecule test --scenario-name $SCENARIO
 
 notifications:
   webhooks: 

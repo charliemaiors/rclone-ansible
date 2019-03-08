@@ -8,8 +8,8 @@ addons:
         key_url: 'https://download.docker.com/linux/ubuntu/gpg'
     packages:
       - docker-ce
-      - python
-      - python-pip
+      - python3
+      - python3-pip
     homebrew:
       packages:
         - python
@@ -17,7 +17,7 @@ addons:
 matrix:
   include:
     - os: linux
-      env: SCENARIO="default" PIP="pip"
+      env: SCENARIO="default" PIP="pip3"
     - os: osx
       env: SCENARIO="macos" PIP="pip3"
     

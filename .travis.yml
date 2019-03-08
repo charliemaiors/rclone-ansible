@@ -1,5 +1,4 @@
 sudo: required
-language: python
 services:
   - docker
 addons:
@@ -9,21 +8,22 @@ addons:
         key_url: 'https://download.docker.com/linux/ubuntu/gpg'
     packages:
       - docker-ce
+      - python
+      - python-pip
+    homebrew:
+      packages:
+        - python
 
 matrix:
   include:
     - os: linux
-      env: SCENARIO="default"
-      python: 3.6
-    - os: linux
-      env: SCENARIO="default"
-      python: 2.7
+      env: SCENARIO="default" PIP="pip"
     - os: osx
-      env: SCENARIO="macos"
-      python: 3.6
+      env: SCENARIO="macos" PIP="pip3"
+    
 
 install:
-  - pip install molecule docker-py
+  - $PIP install molecule docker-py
 
 script:
   - molecule test --scenario-name $SCENARIO

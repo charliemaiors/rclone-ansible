@@ -17,14 +17,15 @@ addons:
 matrix:
   include:
     - os: linux
-      env: SCENARIO="default" PIP="pip3"
+      env: SCENARIO="default" PIP="pip"
+      language: python
     - os: osx
       env: SCENARIO="macos" PIP="pip3"
+      language: ruby   # Necessary "hack" to avoid python error on osx on travis-ci
     
 
 install:
-  - sudo $PIP install --upgrade pip
-  - sudo $PIP install molecule docker-py
+  - $PIP install molecule docker-py
 
 script:
   - molecule test --scenario-name $SCENARIO

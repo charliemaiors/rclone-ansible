@@ -10,6 +10,7 @@ driver:
 lint:
   name: yamllint
 platforms:
+  - name: localosx
 provisioner:
   name: ansible
   lint:

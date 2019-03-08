@@ -23,7 +23,7 @@ matrix:
     
 
 install:
-  - $PIP install --upgrade pip
+  - sudo $PIP install --upgrade pip
   - $PIP install molecule docker-py
 
 script:

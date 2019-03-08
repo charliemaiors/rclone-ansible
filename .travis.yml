@@ -24,7 +24,7 @@ matrix:
 
 install:
   - sudo $PIP install --upgrade pip
-  - $PIP install molecule docker-py
+  - sudo $PIP install molecule docker-py
 
 script:
   - molecule test --scenario-name $SCENARIO

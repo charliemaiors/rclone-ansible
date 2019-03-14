@@ -36,7 +36,7 @@ Simple and easy
 
     - hosts: rclone
       roles:
-         - { role: rclone-ansible }
+         - { role: charliemaiors.rclone-ansible }
 
 License
 -------
